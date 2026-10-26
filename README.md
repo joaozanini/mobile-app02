@@ -91,4 +91,4 @@ Os testes rodam na JVM, sem emulador:
 
 ## Documento de entrega
 
-O documento com os itens solicitados no enunciado está em [docs/DOCUMENTO-ENTREGA.md](docs/DOCUMENTO-ENTREGA.md).
+O documento com os itens solicitados no enunciado está na raiz (ENTREGA.md)
