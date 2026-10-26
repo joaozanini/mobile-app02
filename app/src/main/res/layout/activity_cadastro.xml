@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tela de cadastro / edição / exclusão de uma manutenção -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cinza_fundo"
+    android:orientation="vertical"
+    tools:context=".CadastroActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarCadastro"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/azul_primario"
+        android:theme="@style/ThemeOverlay.AutoLog.Toolbar"
+        app:navigationContentDescription="@string/voltar"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="@color/branco"
+        app:title="@string/titulo_nova"
+        app:titleTextColor="@color/branco" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/cinza_borda"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="16dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilVeiculo"
+                        style="@style/AutoLog.Campo"
+                        android:hint="@string/campo_veiculo"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="40"
+                        app:startIconDrawable="@drawable/ic_car">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etVeiculo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords"
+                            android:maxLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        style="@style/AutoLog.Rotulo"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/campo_tipo" />
+
+                    <Spinner
+                        android:id="@+id/spTipo"
+                        style="@style/Widget.AppCompat.Spinner.Underlined"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilData"
+                        style="@style/AutoLog.Campo"
+                        android:hint="@string/campo_data"
+                        app:endIconContentDescription="@string/abrir_calendario"
+                        app:endIconDrawable="@drawable/ic_calendar"
+                        app:endIconMode="custom">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etData"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="date"
+                            android:maxLength="10"
+                            android:maxLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilKm"
+                        style="@style/AutoLog.Campo"
+                        android:hint="@string/campo_km"
+                        app:suffixText="@string/sufixo_km">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etKm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:maxLength="7"
+                            android:maxLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilCusto"
+                        style="@style/AutoLog.Campo"
+                        android:hint="@string/campo_custo"
+                        app:prefixText="@string/prefixo_moeda">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etCusto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="0123456789.,"
+                            android:inputType="numberDecimal"
+                            android:maxLength="12"
+                            android:maxLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilObservacoes"
+                        style="@style/AutoLog.Campo"
+                        android:hint="@string/campo_observacoes"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="200">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etObservacoes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top"
+                            android:inputType="textMultiLine|textCapSentences"
+                            android:maxLines="4"
+                            android:minLines="2" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Regra de negócio: data prevista da próxima manutenção -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_info"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:contentDescription="@string/cd_icone_info"
+                            app:srcCompat="@drawable/ic_info"
+                            app:tint="@color/azul_escuro" />
+
+                        <TextView
+                            android:id="@+id/tvProximaPrevista"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:textColor="@color/azul_escuro"
+                            android:textSize="13sp"
+                            tools:text="Próxima manutenção prevista: 26/04/2027 (a cada 6 meses)" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSalvar"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/salvar"
+                android:textSize="16sp"
+                app:icon="@drawable/ic_save" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnExcluir"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/excluir"
+                android:textColor="@color/vermelho"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:icon="@drawable/ic_delete"
+                app:iconTint="@color/vermelho"
+                app:strokeColor="@color/vermelho"
+                tools:visibility="visible" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancelar"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:text="@string/cancelar" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

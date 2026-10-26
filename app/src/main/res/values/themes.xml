@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Tema base do aplicativo (Material 3, claro) -->
+    <style name="Theme.AutoLog" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/azul_primario</item>
+        <item name="colorOnPrimary">@color/branco</item>
+        <item name="colorPrimaryContainer">@color/azul_claro</item>
+        <item name="colorOnPrimaryContainer">@color/azul_escuro</item>
+        <item name="colorSecondary">@color/ambar_escuro</item>
+        <item name="colorOnSecondary">@color/preto</item>
+        <item name="colorSurface">@color/branco</item>
+        <item name="colorOnSurface">@color/texto_principal</item>
+        <item name="android:colorBackground">@color/cinza_fundo</item>
+        <item name="android:statusBarColor">@color/azul_escuro</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+    </style>
+
+    <!-- Overlay da Toolbar: deixa ícones e textos brancos sobre o fundo azul -->
+    <style name="ThemeOverlay.AutoLog.Toolbar" parent="ThemeOverlay.Material3.Dark">
+        <item name="colorControlNormal">@color/branco</item>
+        <item name="colorOnSurface">@color/branco</item>
+        <item name="colorOnSurfaceVariant">@color/branco</item>
+        <item name="android:textColorPrimary">@color/branco</item>
+    </style>
+
+    <!-- Rótulo dos campos do formulário -->
+    <style name="TextAppearance.AutoLog.Rotulo" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textColor">@color/cinza_texto</item>
+    </style>
+</resources>

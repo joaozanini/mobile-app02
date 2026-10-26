@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Item da ListView: uma manutenção cadastrada -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_item"
+    android:foreground="?attr/selectableItemBackground"
+    android:padding="14dp">
+
+    <ImageView
+        android:id="@+id/ivIcone"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_icone"
+        android:contentDescription="@string/cd_icone_tipo"
+        android:padding="9dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_build"
+        app:tint="@color/azul_primario" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_status"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="3dp"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Vencida" />
+
+    <TextView
+        android:id="@+id/tvTipo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/texto_principal"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/tvStatus"
+        app:layout_constraintStart_toEndOf="@id/ivIcone"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Troca de óleo" />
+
+    <TextView
+        android:id="@+id/tvVeiculo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/cinza_texto"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/tvStatus"
+        app:layout_constraintStart_toStartOf="@id/tvTipo"
+        app:layout_constraintTop_toBottomOf="@id/tvTipo"
+        tools:text="Gol 2015" />
+
+    <TextView
+        android:id="@+id/tvDataKm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/texto_principal"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@id/tvCusto"
+        app:layout_constraintStart_toStartOf="@id/tvTipo"
+        app:layout_constraintTop_toBottomOf="@id/tvVeiculo"
+        tools:text="26/10/2026  •  45.000 km" />
+
+    <TextView
+        android:id="@+id/tvCusto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/azul_escuro"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvDataKm"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="R$ 150,00" />
+
+    <TextView
+        android:id="@+id/tvProxima"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvTipo"
+        app:layout_constraintTop_toBottomOf="@id/tvDataKm"
+        tools:text="Próxima: 26/04/2027" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

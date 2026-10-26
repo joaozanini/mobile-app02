@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tela principal: resumo, filtros e lista (ListView) das manutenções do SQLite -->
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cinza_fundo"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/azul_primario"
+            android:theme="@style/ThemeOverlay.AutoLog.Toolbar"
+            app:subtitle="@string/app_subtitulo"
+            app:subtitleTextColor="@color/branco"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/branco" />
+
+        <!-- Resumo calculado pela regra de negócio: total gasto, quantidade e vencidas -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/cinza_borda"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="12dp">
+
+                <LinearLayout style="@style/AutoLog.ResumoColuna">
+
+                    <TextView
+                        android:id="@+id/tvTotalGasto"
+                        style="@style/AutoLog.ResumoValor"
+                        android:textColor="@color/azul_escuro"
+                        tools:text="R$ 1.250,00" />
+
+                    <TextView
+                        style="@style/AutoLog.ResumoRotulo"
+                        android:text="@string/total_gasto" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/cinza_borda" />
+
+                <LinearLayout style="@style/AutoLog.ResumoColuna">
+
+                    <TextView
+                        android:id="@+id/tvQuantidade"
+                        style="@style/AutoLog.ResumoValor"
+                        tools:text="5" />
+
+                    <TextView
+                        style="@style/AutoLog.ResumoRotulo"
+                        android:text="@string/registros" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/cinza_borda" />
+
+                <LinearLayout style="@style/AutoLog.ResumoColuna">
+
+                    <TextView
+                        android:id="@+id/tvVencidas"
+                        style="@style/AutoLog.ResumoValor"
+                        android:textColor="@color/vermelho"
+                        tools:text="2" />
+
+                    <TextView
+                        style="@style/AutoLog.ResumoRotulo"
+                        android:text="@string/vencidas" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Filtro 2: busca por item específico -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilBusca"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/buscar_hint"
+            app:boxBackgroundColor="@color/branco"
+            app:endIconMode="clear_text"
+            app:startIconDrawable="@drawable/ic_search">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etBusca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Filtro 3: status calculado pela regra de negócio -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/AutoLog.Rotulo"
+                android:layout_marginEnd="8dp"
+                android:text="@string/filtrar_status"
+                android:textSize="14sp" />
+
+            <Spinner
+                android:id="@+id/spFiltroStatus"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/filtro_status_opcoes" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <!-- Requisito 4: exibição dos registros em ListView -->
+            <ListView
+                android:id="@+id/listaManutencoes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="8dp"
+                android:listSelector="@android:color/transparent"
+                android:paddingHorizontal="12dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="96dp"
+                android:scrollbarStyle="outsideOverlay"
+                tools:listitem="@layout/item_manutencao" />
+
+            <TextView
+                android:id="@+id/tvVazio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawablePadding="12dp"
+                android:gravity="center"
+                android:padding="32dp"
+                android:text="@string/lista_vazia"
+                android:textColor="@color/cinza_texto"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:drawableTopCompat="@drawable/ic_car_vazio" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabNova"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="20dp"
+        android:contentDescription="@string/nova_manutencao"
+        app:backgroundTint="@color/azul_primario"
+        app:srcCompat="@drawable/ic_add"
+        app:tint="@color/branco" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
