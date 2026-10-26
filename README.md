@@ -51,7 +51,7 @@ app/src/main/java/br/com/autolog/
 
 Recursos em `app/src/main/res`: `layout/activity_main.xml`, `layout/activity_cadastro.xml`,
 `layout/item_manutencao.xml`, `menu/menu_main.xml`, ícones vetoriais em `drawable/` e o ícone adaptativo
-do app em `mipmap-anydpi-v26/`.
+do app em `mipmap-anydpi/`.
 
 ## Banco de dados
 

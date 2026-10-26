@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">AutoLog</string>
     <string name="app_subtitulo">Controle de manutenção veicular</string>
 
@@ -13,8 +13,8 @@
     <string name="menu_limpar_filtros">Limpar filtros</string>
     <string name="menu_regras">Regras de manutenção</string>
     <string name="regras_intervalos">Intervalo recomendado por tipo de serviço:\n\n</string>
-    <string name="regras_item">• %1$s: a cada %2$d meses\n</string>
-    <string name="regras_status">\nStatus calculado automaticamente a partir da data do serviço + intervalo do tipo:\n• Em dia: faltam mais de %1$d dias\n• Vence em breve: faltam até %1$d dias\n• Vencida: a data prevista já passou</string>
+    <string name="regras_item" tools:ignore="PluralsCandidate">• %1$s: a cada %2$d meses\n</string>
+    <string name="regras_status" tools:ignore="PluralsCandidate">\nStatus calculado automaticamente a partir da data do serviço + intervalo do tipo:\n• Em dia: faltam mais de %1$d dias\n• Vence em breve: faltam até %1$d dias\n• Vencida: a data prevista já passou</string>
     <string name="ok">OK</string>
     <string name="proxima_formato">Próxima: %1$s</string>
     <string name="data_km_formato">%1$s  •  %2$s km</string>
@@ -34,7 +34,7 @@
     <string name="campo_observacoes">Observações (opcional)</string>
     <string name="abrir_calendario">Abrir calendário</string>
     <string name="proxima_prevista">Próxima manutenção prevista: %1$s</string>
-    <string name="proxima_prevista_detalhe">Próxima manutenção prevista: %1$s (a cada %2$d meses)</string>
+    <string name="proxima_prevista_detalhe" tools:ignore="PluralsCandidate">Próxima manutenção prevista: %1$s (a cada %2$d meses)</string>
     <string name="proxima_indefinida">—</string>
     <string name="salvar">Salvar</string>
     <string name="excluir">Excluir</string>

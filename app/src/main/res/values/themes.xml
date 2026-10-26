@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Tema base do aplicativo (Material 3, claro) -->
     <style name="Theme.AutoLog" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/azul_primario</item>
@@ -11,7 +11,7 @@
         <item name="colorOnSurface">@color/texto_principal</item>
         <item name="android:colorBackground">@color/cinza_fundo</item>
         <item name="android:statusBarColor">@color/azul_escuro</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 
     <!-- Overlay da Toolbar: deixa ícones e textos brancos sobre o fundo azul -->
@@ -22,8 +22,4 @@
         <item name="android:textColorPrimary">@color/branco</item>
     </style>
 
-    <!-- Rótulo dos campos do formulário -->
-    <style name="TextAppearance.AutoLog.Rotulo" parent="TextAppearance.Material3.LabelLarge">
-        <item name="android:textColor">@color/cinza_texto</item>
-    </style>
 </resources>
