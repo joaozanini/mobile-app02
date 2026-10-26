@@ -1,0 +1,21 @@
+# Gradle
+.gradle/
+build/
+/captures/
+
+# Android Studio / IntelliJ
+*.iml
+.idea/
+/local.properties
+.externalNativeBuild/
+.cxx/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
+
+# Artefatos
+*.apk
+*.aab
+*.log
