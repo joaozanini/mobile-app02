@@ -1,0 +1,55 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">AutoLog</string>
+    <string name="app_subtitulo">Controle de manutenção veicular</string>
+
+    <!-- Tela principal -->
+    <string name="total_gasto">Total gasto</string>
+    <string name="registros">Registros</string>
+    <string name="vencidas">Vencidas</string>
+    <string name="buscar_hint">Buscar por veículo, tipo ou observação</string>
+    <string name="filtrar_status">Status:</string>
+    <string name="lista_vazia">Nenhuma manutenção encontrada.\n\nToque em + para registrar a primeira.</string>
+    <string name="nova_manutencao">Nova manutenção</string>
+    <string name="menu_limpar_filtros">Limpar filtros</string>
+    <string name="menu_regras">Regras de manutenção</string>
+    <string name="regras_intervalos">Intervalo recomendado por tipo de serviço:\n\n</string>
+    <string name="regras_item" tools:ignore="PluralsCandidate">• %1$s: a cada %2$d meses\n</string>
+    <string name="regras_status" tools:ignore="PluralsCandidate">\nStatus calculado automaticamente a partir da data do serviço + intervalo do tipo:\n• Em dia: faltam mais de %1$d dias\n• Vence em breve: faltam até %1$d dias\n• Vencida: a data prevista já passou</string>
+    <string name="ok">OK</string>
+    <string name="proxima_formato">Próxima: %1$s</string>
+    <string name="data_km_formato">%1$s  •  %2$s km</string>
+
+    <!-- Tela de cadastro / edição -->
+    <string name="titulo_cadastro">Manutenção</string>
+    <string name="titulo_nova">Nova manutenção</string>
+    <string name="titulo_editar">Editar manutenção</string>
+    <string name="voltar">Voltar</string>
+    <string name="campo_veiculo">Veículo (ex.: Gol 2015, Honda CG 160)</string>
+    <string name="campo_tipo">Tipo de manutenção</string>
+    <string name="campo_data">Data do serviço (dd/mm/aaaa)</string>
+    <string name="campo_km">Quilometragem do veículo</string>
+    <string name="sufixo_km">km</string>
+    <string name="campo_custo">Custo do serviço</string>
+    <string name="prefixo_moeda">R$\u00a0</string>
+    <string name="campo_observacoes">Observações (opcional)</string>
+    <string name="abrir_calendario">Abrir calendário</string>
+    <string name="proxima_prevista">Próxima manutenção prevista: %1$s</string>
+    <string name="proxima_prevista_detalhe" tools:ignore="PluralsCandidate">Próxima manutenção prevista: %1$s (a cada %2$d meses)</string>
+    <string name="proxima_indefinida">—</string>
+    <string name="salvar">Salvar</string>
+    <string name="excluir">Excluir</string>
+    <string name="cancelar">Cancelar</string>
+
+    <!-- Mensagens -->
+    <string name="msg_inserido">Manutenção cadastrada com sucesso!</string>
+    <string name="msg_atualizado">Manutenção atualizada com sucesso!</string>
+    <string name="msg_excluido">Manutenção excluída.</string>
+    <string name="msg_nao_encontrado">Registro não encontrado.</string>
+    <string name="msg_erro_salvar">Não foi possível salvar. Tente novamente.</string>
+    <string name="confirmar_exclusao_titulo">Excluir manutenção</string>
+    <string name="confirmar_exclusao_msg">Deseja realmente excluir este registro? Esta ação não pode ser desfeita.</string>
+
+    <!-- Descrições de acessibilidade -->
+    <string name="cd_icone_tipo">Ícone do tipo de manutenção</string>
+    <string name="cd_icone_info">Informação</string>
+</resources>

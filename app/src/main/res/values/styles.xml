@@ -1,0 +1,41 @@
+<resources>
+    <!-- Colunas do cartão de resumo da tela principal -->
+    <style name="AutoLog.ResumoColuna" parent="">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="AutoLog.ResumoValor" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/texto_principal</item>
+    </style>
+
+    <style name="AutoLog.ResumoRotulo" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/cinza_texto</item>
+    </style>
+
+    <!-- Rótulo acima de campos que não usam TextInputLayout (ex.: Spinner) -->
+    <style name="AutoLog.Rotulo" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/cinza_texto</item>
+    </style>
+
+    <!-- Campos de texto do formulário -->
+    <style name="AutoLog.Campo" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="boxBackgroundColor">@color/branco</item>
+    </style>
+</resources>

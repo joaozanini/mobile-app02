@@ -1,0 +1,9 @@
+<resources>
+    <!-- Opções do filtro de status da tela principal (a ordem é usada em MainActivity) -->
+    <string-array name="filtro_status_opcoes">
+        <item>Todas</item>
+        <item>Vencidas</item>
+        <item>Vence em breve</item>
+        <item>Em dia</item>
+    </string-array>
+</resources>

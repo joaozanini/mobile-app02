@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Identidade visual do AutoLog -->
+    <color name="azul_primario">#1565C0</color>
+    <color name="azul_escuro">#0D47A1</color>
+    <color name="azul_claro">#E3F2FD</color>
+    <color name="ambar_escuro">#FF8F00</color>
+
+    <color name="branco">#FFFFFF</color>
+    <color name="preto">#000000</color>
+    <color name="cinza_fundo">#F3F5F9</color>
+    <color name="cinza_borda">#E0E3E8</color>
+    <color name="cinza_texto">#5F6B7A</color>
+    <color name="texto_principal">#1B2430</color>
+
+    <!-- Cores dos status (regra de negócio) -->
+    <color name="verde">#2E7D32</color>
+    <color name="verde_claro">#E8F5E9</color>
+    <color name="laranja">#EF6C00</color>
+    <color name="laranja_claro">#FFF3E0</color>
+    <color name="vermelho">#C62828</color>
+    <color name="vermelho_claro">#FFEBEE</color>
+
+    <color name="ic_launcher_background">#1565C0</color>
+</resources>
